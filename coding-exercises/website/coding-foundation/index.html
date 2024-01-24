@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>draw circles :(</h1>
+    <style>
+        #circle-container {
+            position: relative;
+
+
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: black;
+
+        }
+    </style>
+
+    <input type="number" id="Number">
+    <button onclick="drawCircles()" style="border-radius: 5px;">get circles</button>
+
+    <div id="circle-container"></div>
+
+
+    <script>
+        function drawCircles() {
+            var getnumber = document.getElementById("Number").value;
+
+            document.getElementById("circle-container").innerHTML = "";
+
+
+            for (var i = 0; i < getnumber; i++) {
+                var circle = document.createElement("div");
+                circle.className = "circle";
+
+                var result = Math.floor(i / 15);
+
+                circle.style.left = i * 50 - result * 15 * 50 + "px";
+                circle.style.top = 10 + result * 50 + "px";
+
+                circle.style.width = "36px";
+                circle.style.height = "36px";
+
+                document.getElementById("circle-container").appendChild(circle);
+            }
+
+
+        }
+
+
+    </script>
+    <p></p>
+</body>
+
+</html>
